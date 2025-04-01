@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ schedule_type }} Immunization Schedule</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .back-link { display: inline-block; margin-top: 20px; text-decoration: none; color: #2c3e50; }
+        .back-link:hover { text-decoration: underline; }
+        .schedule-info { margin-bottom: 20px; padding: 15px; background-color: #f5f5f5; }
+        .category { display: inline-block; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; }
+        .mandatory { background-color: #ffdddd; }
+        .recommended { background-color: #ffffcc; }
+        .optional { background-color: #e6e6fa; }
+        .special { background-color: #e0ffff; }
+        .region { background-color: #d8bfd8; }
+    </style>
+</head>
+<body>
+    <h1>{{ schedule_type }} Immunization Schedule</h1>
+    
+    <div class="schedule-info">
+        {% if schedule_type == 'NIP' %}
+            <p>Government of India's National Immunization Program (NIP) Schedule</p>
+        {% else %}
+            <p>Indian Academy of Pediatrics (IAP) Recommended Schedule</p>
+        {% endif %}
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Vaccine</th>
+                <th>Schedule</th>
+                {% if schedule_type == 'IAP' %}
+                    <th>Category</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for vaccine in schedule %}
+            <tr>
+                <td>{{ vaccine.vaccine }}</td>
+                <td>{{ vaccine.schedule }}</td>
+                {% if schedule_type == 'IAP' %}
+                    <td>
+                        <span class="category {{ vaccine.category.lower().replace('-', '').replace(' ', '') }}">
+                            {{ vaccine.category }}
+                        </span>
+                    </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <a href="/" class="back-link">← Back to Age Calculator</a>
+</body>
+</html>

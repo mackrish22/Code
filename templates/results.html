@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vaccine Recommendations</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .schedule-section { margin-bottom: 40px; }
+        .schedule-title { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        .vaccine-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+        .vaccine-name { font-weight: bold; font-size: 1.2em; margin-bottom: 10px; }
+        .nip { background-color: #e8f4fc; }
+        .iap { background-color: #f0f8f0; }
+        .category { display: inline-block; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; }
+        .mandatory { background-color: #ffdddd; }
+        .recommended { background-color: #ffffcc; }
+        .optional { background-color: #e6e6fa; }
+        .special { background-color: #e0ffff; }
+        .region { background-color: #d8bfd8; }
+        .back-link { display: block; margin-top: 20px; text-decoration: none; color: #2c3e50; }
+        .back-link:hover { text-decoration: underline; }
+        .age-display { font-size: 1.2em; margin-bottom: 20px; padding: 10px; background-color: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h1>Vaccine Recommendations</h1>
+    <div class="age-display">For child age: <strong>{{ age }}</strong></div>
+    
+    <div class="schedule-section">
+        <h2 class="schedule-title">Government (NIP) Schedule</h2>
+        
+        {% if nip_recommendations %}
+            {% for vaccine in nip_recommendations %}
+            <div class="vaccine-card nip">
+                <div class="vaccine-name">{{ vaccine.vaccine }}</div>
+                <div><strong>Due Age:</strong> {{ vaccine.due_age }}</div>
+                <div><strong>Latest Age:</strong> {{ vaccine.max_age }}</div>
+                <div><strong>Dose:</strong> {{ vaccine.dose }}</div>
+                <div><strong>Route:</strong> {{ vaccine.route }}</div>
+                {% if vaccine.get('site') %}
+                    <div><strong>Site:</strong> {{ vaccine.site }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No vaccines due at this age according to the NIP schedule.</p>
+        {% endif %}
+    </div>
+    
+    {% if include_iap %}
+    <div class="schedule-section">
+        <h2 class="schedule-title">IAP Recommended Schedule</h2>
+        
+        {% if iap_recommendations %}
+            {% for vaccine in iap_recommendations %}
+            <div class="vaccine-card iap">
+                <div class="vaccine-name">{{ vaccine.vaccine }}</div>
+                <div><strong>Due Age:</strong> 
+                    {% if vaccine.is_annual %}
+                        Annual (starting at 6 months)
+                    {% else %}
+                        {{ vaccine.due_age }}
+                    {% endif %}
+                </div>
+                <div><strong>Category:</strong> 
+                    <span class="category {{ vaccine.category.lower().replace('-', '').replace(' ', '') }}">
+                        {{ vaccine.category }}
+                    </span>
+                </div>
+                {% if vaccine.get('notes') %}
+                    <div><strong>Notes:</strong> {{ vaccine.notes }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No additional vaccines recommended at this age by IAP.</p>
+        {% endif %}
+    </div>
+    {% endif %}
+    
+    <a href="/" class="back-link">← Back to Age Calculator</a>
+</body>
+</html>

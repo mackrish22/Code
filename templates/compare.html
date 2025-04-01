@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compare Immunization Schedules</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; text-align: center; }
+        .comparison-container { display: flex; margin-top: 30px; gap: 20px; }
+        .schedule-column { flex: 1; background-color: #f9f9f9; padding: 20px; border-radius: 5px; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #e9e9e9; }
+        .back-link { display: inline-block; margin-top: 30px; text-decoration: none; color: #2c3e50; }
+        .back-link:hover { text-decoration: underline; }
+        .notes { margin-top: 30px; padding: 20px; background-color: #f5f5f5; border-radius: 5px; }
+        .category { display: inline-block; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; margin-right: 5px; }
+        .mandatory { background-color: #ffdddd; }
+        .recommended { background-color: #ffffcc; }
+        .optional { background-color: #e6e6fa; }
+        .special { background-color: #e0ffff; }
+        .region { background-color: #d8bfd8; }
+    </style>
+</head>
+<body>
+    <h1>Compare Immunization Schedules</h1>
+    
+    <div class="comparison-container">
+        <div class="schedule-column">
+            <h2>Government (NIP) Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vaccine</th>
+                        <th>Due Age</th>
+                        <th>Dose</th>
+                        <th>Route</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for vaccine in nip_schedule %}
+                    <tr>
+                        <td>{{ vaccine.vaccine }}</td>
+                        <td>{{ vaccine.due_age }}</td>
+                        <td>{{ vaccine.dose }}</td>
+                        <td>{{ vaccine.route }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="schedule-column">
+            <h2>IAP Recommended Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vaccine</th>
+                        <th>Schedule</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for vaccine in iap_schedule %}
+                    <tr>
+                        <td>{{ vaccine.vaccine }}</td>
+                        <td>{{ ', '.join(vaccine.schedule) }}</td>
+                        <td>
+                            <span class="category {{ vaccine.category.lower().replace('-', '').replace(' ', '') }}">
+                                {{ vaccine.category }}
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="notes">
+        <h3>IAP Vaccine Categories:</h3>
+        <ul>
+            {% for category, description in categories.items() %}
+            <li>
+                <span class="category {{ category.lower().replace('-', '').replace(' ', '') }}">
+                    {{ category }}
+                </span>: {{ description }}
+            </li>
+            {% endfor %}
+        </ul>
+        <p>The Indian Academy of Pediatrics (IAP) recommends additional vaccines beyond the government program (NIP) 
+        to provide broader protection against vaccine-preventable diseases.</p>
+    </div>
+    
+    <a href="/" class="back-link">← Back to Age Calculator</a>
+</body>
+</html>
