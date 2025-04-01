@@ -1,0 +1,159 @@
+{
+    "schedule": [
+      {
+        "vaccine": "BCG",
+        "due_age": "At birth",
+        "max_age": "till one year of age",
+        "dose": "For Infants (0.05 ml until 1 month) 0.3 ml Beyond age 1 month",
+        "diluent": "YES Manufacturer supplied diluent (Sodium chloride)",
+        "route": "Intra-dermal",
+        "site": "Upper Arm - LEFT"
+      },
+      {
+        "vaccine": "Hepatitis B - Birth dose",
+        "due_age": "At birth",
+        "max_age": "within 24 hours",
+        "dose": "0.5 ml",
+        "diluent": "NO",
+        "route": "Intra-muscular",
+        "site": "Antero-lateral side of mid-thigh - LEFT"
+      },
+      {
+        "vaccine": "OPV-0",
+        "due_age": "At birth",
+        "max_age": "within the first 15 days",
+        "dose": "2 drops",
+        "route": "Oral"
+      },
+      {
+        "vaccine": "OPV 1, 2 & 3",
+        "due_age": "At 6 weeks, 10 weeks & 14 weeks",
+        "max_age": "till 5 years of age",
+        "dose": "2 drops",
+        "route": "Oral"
+      },
+      {
+        "vaccine": "Pentavalent 1, 2 & 3",
+        "due_age": "At 6 weeks, 10 weeks & 14 weeks",
+        "max_age": "1 year of age",
+        "dose": "0.5 ml",
+        "diluent": "NO",
+        "route": "Intra-muscular",
+        "site": "Antero-lateral side of mid-thigh - LEFT"
+      },
+      {
+        "vaccine": "Fractional IPV",
+        "due_age": "At 6 weeks",
+        "max_age": "1 year of age",
+        "dose": "0.1 ml",
+        "diluent": "NO",
+        "route": "Intra-dermal",
+        "site": "Upper Arm - RIGHT"
+      },
+      {
+        "vaccine": "Rotavirus",
+        "due_age": "At 6 weeks, 10 weeks & 14 weeks",
+        "max_age": "1 year of age",
+        "dose": "5 drops",
+        "route": "Oral"
+      },
+      {
+        "vaccine": "Pneumococcal Conjugate Vaccine (PCV)",
+        "due_age": "At 6 weeks & 14 weeks (booster at 9 months)",
+        "max_age": "1 year of age",
+        "dose": "0.5 ml",
+        "diluent": "NO",
+        "route": "Intra-muscular",
+        "site": "Antero-lateral side of mid-thigh - RIGHT"
+      },
+      {
+        "vaccine": "Measles/Rubella 1st dose",
+        "due_age": "At 9 completed months-12 months",
+        "max_age": "5 years of age",
+        "dose": "0.5 ml",
+        "diluent": "YES Manufacturer supplied diluent (Sterile water)",
+        "route": "Sub-cutaneous",
+        "site": "Upper Arm - RIGHT"
+      },
+      {
+        "vaccine": "Japanese Encephalitis-1",
+        "due_age": "At 9 months-12 months",
+        "max_age": "15 years of age",
+        "dose": "0.5 ml",
+        "diluent": "YES Manufacturer supplied diluent (Phosphate Buffer Solution)",
+        "route": "Sub-cutaneous",
+        "site": "Upper Arm - LEFT"
+      },
+      {
+        "vaccine": "Vitamin A (1st dose)",
+        "due_age": "At 9 months",
+        "max_age": "5 years of age",
+        "dose": "1 ml (1 lakh IU)",
+        "route": "Oral"
+      },
+      {
+        "vaccine": "DPT Booster-1",
+        "due_age": "16-24 months",
+        "max_age": "7 years of age",
+        "dose": "0.5 ml",
+        "diluent": "NO",
+        "route": "Intra-muscular",
+        "site": "Antero-lateral side of mid-thigh - LEFT"
+      },
+      {
+        "vaccine": "Measles/Rubella 2nd dose",
+        "due_age": "16-24 months",
+        "max_age": "5 years of age",
+        "dose": "0.5 ml",
+        "diluent": "YES Manufacturer supplied diluent (Sterile water)",
+        "route": "Sub-cutaneous",
+        "site": "Upper Arm - RIGHT"
+      },
+      {
+        "vaccine": "OPV Booster",
+        "due_age": "16-24 months",
+        "max_age": "5 Years",
+        "dose": "2 drops",
+        "route": "Oral"
+      },
+      {
+        "vaccine": "Japanese Encephalitis-2",
+        "due_age": "16-24 months",
+        "max_age": "till 15 years of age",
+        "dose": "0.5 ml",
+        "diluent": "YES Manufacturer supplied diluent (Phosphate Buffer Solution)",
+        "route": "Sub-cutaneous",
+        "site": "Upper Arm - LEFT"
+      },
+      {
+        "vaccine": "Vitamin A (2nd to 9th dose)",
+        "due_age": "At 16 months, Then every 6 months",
+        "max_age": "up to the age of 5 years",
+        "dose": "2 ml (2 lakh IU)",
+        "route": "Oral"
+      },
+      {
+        "vaccine": "DPT Booster-2",
+        "due_age": "5-6 years",
+        "max_age": "7 Years of age",
+        "dose": "0.5 ml",
+        "diluent": "NO",
+        "route": "Intra-muscular",
+        "site": "Upper Arm"
+      },
+      {
+        "vaccine": "Td",
+        "due_age": "10 years & 16 years",
+        "max_age": "16 Years",
+        "dose": "0.5 ml",
+        "diluent": "NO",
+        "route": "Intra-muscular",
+        "site": "Upper Arm"
+      }
+    ],
+    "notes": [
+      "*Where applicable",
+      "##MR vaccine",
+      "@Japanese Encephalitis vaccine in endemic districts"
+    ]
+  }

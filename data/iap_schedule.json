@@ -1,0 +1,102 @@
+{
+    "schedule": [
+      {
+        "vaccine": "BCG",
+        "schedule": ["Birth"],
+        "category": "Mandatory"
+      },
+      {
+        "vaccine": "Hepatitis B",
+        "schedule": ["Birth", "6w", "10w", "14w"],
+        "category": "Mandatory"
+      },
+      {
+        "vaccine": "Polio",
+        "schedule": ["Birth", "6w", "10w", "14w", "18m", "5y"],
+        "category": "Mandatory"
+      },
+      {
+        "vaccine": "DTaP",
+        "schedule": ["6w", "10w", "14w", "18m", "5y"],
+        "category": "Mandatory"
+      },
+      {
+        "vaccine": "Hib",
+        "schedule": ["6w", "10w", "14w", "18m"],
+        "category": "Mandatory"
+      },
+      {
+        "vaccine": "PCV",
+        "schedule": ["6w", "14w", "9m"],
+        "category": "Mandatory"
+      },
+      {
+        "vaccine": "Rotavirus",
+        "schedule": ["6w", "10w", "14w"],
+        "category": "Mandatory"
+      },
+      {
+        "vaccine": "MMR",
+        "schedule": ["9m", "15m"],
+        "category": "Mandatory"
+      },
+      {
+        "vaccine": "Typhoid Conjugate",
+        "schedule": ["9m", "2y"],
+        "category": "Recommended"
+      },
+      {
+        "vaccine": "Hepatitis A",
+        "schedule": ["12m", "18m"],
+        "category": "Recommended"
+      },
+      {
+        "vaccine": "Varicella",
+        "schedule": ["15m", "5y"],
+        "category": "Recommended"
+      },
+      {
+        "vaccine": "HPV",
+        "schedule": ["9y", "15m"],
+        "category": "Recommended",
+        "notes": "For females only"
+      },
+      {
+        "vaccine": "Influenza",
+        "schedule": ["Annually from 6m"],
+        "category": "Optional"
+      },
+      {
+        "vaccine": "Meningococcal",
+        "schedule": ["9m", "12m"],
+        "category": "Optional"
+      },
+      {
+        "vaccine": "Cholera",
+        "schedule": ["6m", "7m"],
+        "category": "Optional"
+      },
+      {
+        "vaccine": "Rabies",
+        "schedule": ["Post-exposure"],
+        "category": "Special"
+      },
+      {
+        "vaccine": "Japanese Encephalitis",
+        "schedule": ["9m", "16m"],
+        "category": "Region-specific"
+      }
+    ],
+    "age_units": {
+      "w": "weeks",
+      "m": "months",
+      "y": "years"
+    },
+    "categories": {
+      "Mandatory": "Recommended for all children in India",
+      "Recommended": "Provides additional protection against diseases",
+      "Optional": "May be considered based on individual circumstances",
+      "Special": "For specific situations only",
+      "Region-specific": "Recommended in certain geographic areas"
+    }
+  }
